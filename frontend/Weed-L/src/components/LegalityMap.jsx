@@ -44,7 +44,7 @@ const LegalityMap = ({ geoJson }) => {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyB24hf4IcPFbMC1cSqJHyzzyKQXuc7SwN4">
+    <LoadScript googleMapsApiKey="AIzaSyB24hf4IcPFbMC1cSqJHyzzyKQXuc7SwN123">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
