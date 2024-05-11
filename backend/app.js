@@ -13,7 +13,7 @@ const cookieParser = require("cookie-parser");
 
 const app = express();
 
-const pemKey = Buffer.from(process.env.PEM_KEY, 'base64').toString('utf8');
+
 
 app.use(
   cors({
@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 const PORT = 4000;
 
 // Corrected Path to your SSL files
-const pemKey = Buffer.from(process.env.PEM_KEY, 'base64').toString('utf8');
+const key = Buffer.from(process.env.PEM_KEY, 'base64').toString('utf8');
 const cert = Buffer.from(process.env.CERT, 'base64').toString('utf8');
 
 const httpsOptions = {
