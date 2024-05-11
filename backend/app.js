@@ -13,6 +13,8 @@ const cookieParser = require("cookie-parser");
 
 const app = express();
 
+const pemKey = Buffer.from(process.env.PEM_KEY, 'base64').toString('utf8');
+
 app.use(
   cors({
     origin: "https://127.0.0.1:5173", // Ensure CORS settings are appropriate for HTTPS
@@ -36,11 +38,8 @@ app.use((req, res, next) => {
 const PORT = 4000;
 
 // Corrected Path to your SSL files
-const key = fs.readFileSync(
-  "./Weed-L/localhost+2-key.pem",
-  "utf8"
-);
-const cert = fs.readFileSync("./Weed-L/localhost+2.pem", "utf8");
+const pemKey = Buffer.from(process.env.PEM_KEY, 'base64').toString('utf8');
+const cert = Buffer.from(process.env.CERT, 'base64').toString('utf8');
 
 const httpsOptions = {
   key: key,
