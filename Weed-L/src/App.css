@@ -1,0 +1,21 @@
+/* in your CSS file, e.g., App.css */
+html {
+  background-color: #ff0000;
+  margin-top: 160px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  min-height: 100vh;
+  /* margin-top: 82px; This sets the top margin, other margins could be added similarly if needed */
+  background-color: #f5faef; /* This is your content background color */
+  overflow-x: hidden;
+}
+
+
+#root{
+  max-width:1700px;
+  }

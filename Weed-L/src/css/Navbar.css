@@ -1,0 +1,16 @@
+.navbar-custom .container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-custom .navbar-nav {
+  flex: 1;
+  justify-content: center; 
+  display: flex;
+}
+
+.navbar-custom .navbar-brand {
+  flex-grow: 0; 
+  padding: 0 100px; 
+}
