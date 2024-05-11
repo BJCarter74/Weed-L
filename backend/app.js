@@ -37,10 +37,10 @@ const PORT = 4000;
 
 // Corrected Path to your SSL files
 const key = fs.readFileSync(
-  "D:/ERA Projects/Weed-L/localhost+2-key.pem",
+  "./Weed-L/localhost+2-key.pem",
   "utf8"
 );
-const cert = fs.readFileSync("D:/ERA Projects/Weed-L/localhost+2.pem", "utf8");
+const cert = fs.readFileSync("./Weed-L/localhost+2.pem", "utf8");
 
 const httpsOptions = {
   key: key,
