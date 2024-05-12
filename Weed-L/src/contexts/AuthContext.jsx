@@ -1,5 +1,5 @@
-import React, { createContext, useState, useEffect } from "react";
-import axios from "../api/axiosConfig.js";
+import React, { useState, useEffect, createContext } from "react";
+import axios from "../api/axiosConfig";
 
 export const AuthContext = createContext();
 
@@ -9,10 +9,13 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuthStatus = async () => {
       try {
-        const response = await axios.get("/auth/status", {
-          withCredentials: true,
-        });
-        setIsAuthenticated(response.data.isAuthenticated);
+        // Only call the status endpoint if there's a token present
+        if (document.cookie.includes("token=")) {
+          const response = await axios.get("/auth/status", {
+            withCredentials: true,
+          });
+          setIsAuthenticated(response.data.isAuthenticated);
+        }
       } catch (error) {
         console.error("Error checking authentication status:", error);
         setIsAuthenticated(false);
@@ -39,3 +42,5 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+export default AuthProvider;
