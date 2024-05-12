@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../api/axiosConfig.js";
 import "../css/StrainList.css";
 
 const StrainsList = () => {
