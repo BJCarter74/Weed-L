@@ -9,7 +9,7 @@ const StrainsList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://localhost:3000/api/strains");
+        const response = await axios.get("/api/strains");
         setStrains(response.data);
         if (response.data.length === 0) {
           setError("No strains found.");
