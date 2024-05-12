@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import axios from "axios";
+import axios from "../api/axiosConfig";
 import "../css/SessionForm.css";
 
 function SessionForm({ isOpen, onRequestClose }) {
@@ -24,13 +24,9 @@ function SessionForm({ isOpen, onRequestClose }) {
       rating,
     };
     try {
-      const response = await axios.post(
-        "https://localhost:3000/session/createsession",
-        data,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.post("/session/createsession", data, {
+        withCredentials: true,
+      });
       onRequestClose(); // Close the modal on success
     } catch (error) {
       setError("Failed to create session. Please try again.");
