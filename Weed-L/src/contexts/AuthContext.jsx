@@ -9,7 +9,6 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuthStatus = async () => {
       try {
-        // Only call the status endpoint if there's a token present
         if (document.cookie.includes("token=")) {
           const response = await axios.get("/auth/status", {
             withCredentials: true,
