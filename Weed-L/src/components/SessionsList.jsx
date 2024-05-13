@@ -16,6 +16,7 @@ const SessionList = () => {
     axios
       .get("/session/sessions")
       .then((response) => {
+        console.log("Sessions fetched:", response.data); // Log fetched data
         if (Array.isArray(response.data)) {
           setSessions(response.data);
         } else {
@@ -23,6 +24,7 @@ const SessionList = () => {
         }
       })
       .catch((err) => {
+        console.error("Error fetching sessions:", err);
         setError(
           "Error fetching sessions: " +
             (err.response ? err.response.data.message : err.message)
